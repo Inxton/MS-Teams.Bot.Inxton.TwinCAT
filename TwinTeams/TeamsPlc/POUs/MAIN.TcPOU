@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="MAIN" Id="{f430142b-5594-40e1-be88-c972d031e187}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	App : TeamsApp;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[App.Run();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

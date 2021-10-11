@@ -1,0 +1,18 @@
+{
+  "Types": [
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "TeamsApp",
+      "Namespace": "TeamsPlc",
+      "TypeMetaInfo": 4
+    },
+    {
+      "TypeAttributes": "\n{attribute addProperty Name \"\" }",
+      "TypeName": "MAIN",
+      "Namespace": "TeamsPlc",
+      "TypeMetaInfo": 3
+    }
+  ],
+  "Name": "TeamsPlc",
+  "Namespace": "TeamsPlc"
+}

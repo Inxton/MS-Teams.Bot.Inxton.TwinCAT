@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="TeamsApp" Id="{0d0f5327-372e-4917-9a25-b16e4178ec03}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TeamsApp EXTENDS TcoContext
+VAR
+	StartTheMachine : TcoCore.TcoTask(THIS^);
+	StopTheMachine : TcoCore.TcoTask(THIS^);
+	
+	IsMachineRunning : BOOL;
+	MessageFromPlc : STRING;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Main" Id="{21781ea6-489e-45fe-a4b2-10433cac13d7}">
+      <Declaration><![CDATA[(*~
+	<docu>
+		<summary>
+			Main method of the TcoContext. This is the entry point of any control logic that belongs to this context. 
+			The call of this method is ensured by calling the <c>InstanceName.Run()</c> method, and it must not be called explicitly.
+			This method is abstract, and it must be overridden in derived block.
+		</summary>
+	</docu>
+~*)
+METHOD PROTECTED  Main]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF StartTheMachine.Execute() THEN
+    IF IsMachineRunning THEN
+        MessageFromPlc := 'The machine is already running!';
+    ELSE
+        MessageFromPlc := '';
+    END_IF
+
+    IsMachineRunning := TRUE;
+    StartTheMachine.DoneWhen(IsMachineRunning);
+END_IF
+
+IF StopTheMachine.Execute() THEN
+    IF NOT IsMachineRunning THEN
+        MessageFromPlc := 'The machine is already off!';
+    ELSE
+        MessageFromPlc := '';
+    END_IF
+
+    IsMachineRunning := FALSE;
+    StopTheMachine.DoneWhen(NOT IsMachineRunning);
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,29 @@
+{
+  "AliasBlocks": [],
+  "EnumBlocks": [],
+  "FunctionBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "TeamsApp",
+      "DeclarationText": "[NS : 'TeamsPlc' NAME : 'TeamsApp']\nFUNCTION_BLOCK TeamsApp EXTENDS TcoContext\nVAR\n\tStartTheMachine : TcoCore.TcoTask(THIS^);\n\tStopTheMachine : TcoCore.TcoTask(THIS^);\n\t\n\t\n\tIsMachineRunning : BOOL;\n\tMessageFromPlc : STRING;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "GlobalVariableTables": [],
+  "Name": "TeamsPlc",
+  "Namespace": "TeamsPlc",
+  "ProgramBlocks": [
+    {
+      "ImplementationText": "",
+      "Methods": [],
+      "Properties": [],
+      "Name": "MAIN",
+      "DeclarationText": "[NS : 'TeamsPlc' NAME : 'MAIN']\nPROGRAM MAIN\nVAR\n\tApp : TeamsApp;\nEND_VAR\n",
+      "MirrorFiles": null
+    }
+  ],
+  "StructBlocks": [],
+  "UnionBlocks": []
+}
