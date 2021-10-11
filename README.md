@@ -1,4 +1,4 @@
-# MS Teams Bot with Beckhoff TwinCAT3 PLC
+# How to control PLC from MS TEAMS
 
 > This a repository from a live coding session. 
 
